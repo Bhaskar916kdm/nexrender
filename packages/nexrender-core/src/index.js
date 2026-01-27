@@ -62,7 +62,7 @@ const init = (settings) => {
     settings.trackSync('Init Started')
 
     // check for WSL
-    settings.wsl = isWsl
+    settings.wsl = isWsl;
 
     const binaryAuto = autofind(settings);
     const binaryUser = settings.binary && fs.existsSync(settings.binary) ? settings.binary : null;
