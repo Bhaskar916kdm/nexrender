@@ -1427,6 +1427,16 @@ There might be a lot of problems creeping around, since this tool works as an in
 
 1. macOS access: there might be issues with nexrender accessing the aerender binary within the Adobe library folder, or accessing /tmp folders. For more details refer to https://github.com/inlife/nexrender/issues/534
 
+> ⚠️ **Warning: Cinema 4D Renderer & aerender**
+>
+> `aerender` may silently fail when rendering After Effects projects that use **Cinema 4D** as the 3D Renderer. The process exits after launch without errors, and tools like `nexrender` may report *"Couldn't find a result file"*.
+>
+> This issue does **not** occur when using **Classic 3D** or **Advanced 3D**, and the same project may render correctly in the After Effects GUI.
+>
+> **Workaround:**  
+> Change affected compositions to use **Classic 3D** or **Advanced 3D**:  
+> `Composition → Composition Settings → Advanced → 3D Renderer`
+
 ## Development
 
 If you wish to contribute by taking an active part in development, you might need this basic tutorial on how to get started:
