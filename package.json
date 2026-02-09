@@ -12,22 +12,7 @@
     "url": "https://github.com/inlife"
   },
   "scripts": {
-    "start": ""start": "npx nexrender-server --port $PORT --secret $NEXRENDER_SECRET",
-    "bootstrap": "lerna bootstrap --no-ci -- --no-package-lock",
-    "postinstall": "npm run bootstrap",
-    "lint": "eslint .",
-    "purge-cache": "lerna exec 'rm -rf node_modules && rm -f package-lock.json'",
-    "purge-master": "rm -rf node_modules && rm -f package-lock.json",
-    "test": "npm run lint && mocha"
-  },
-  "devDependencies": {
-    "chai": "^4.3.10",
-    "cross-env": "^5.2.0",
-    "eslint": "^8.6.0",
-    "lerna": "^3.21.0",
-    "mocha": "^7.1.2",
-    "pkg": "^5.8.1",
-    "testdouble": "^3.20.0"
+    "start": "npx nexrender-server --port $PORT --secret $NEXRENDER_SECRET"
   },
   "engines": {
     "node": ">=18"
