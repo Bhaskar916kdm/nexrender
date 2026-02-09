@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "homepage": "https://www.nexrender.com",
   "description": "Automate your After Effects project creation and rendering routine.",
-  "repository": "inlife/nexrender",
+  "repository": "Bhaskar916kdm/nexrender",
   "license": "MIT",
   "author": {
     "name": "inlife",
@@ -12,20 +12,12 @@
     "url": "https://github.com/inlife"
   },
   "scripts": {
-    "start": "npm run bootstrap",
-    "install-child": "lerna exec -- npm i",
+    "start": "npx nexrender-server --port $PORT --secret $NEXRENDER_SECRET",
     "bootstrap": "lerna bootstrap --no-ci -- --no-package-lock",
+    "postinstall": "npm run bootstrap",
     "lint": "eslint .",
     "purge-cache": "lerna exec 'rm -rf node_modules && rm -f package-lock.json'",
     "purge-master": "rm -rf node_modules && rm -f package-lock.json",
-    "publish": "lerna publish",
-    "public-publish": "lerna exec 'npm publish --access public'",
-    "pkg-rename": "node misc/rename.js",
-    "pkg-cli": "cross-env NEXRENDER_REQUIRE_PLUGINS=1 pkg packages/nexrender-cli/package.json --out-path bin/",
-    "pkg-worker": "cross-env NEXRENDER_REQUIRE_PLUGINS=1 pkg packages/nexrender-worker/package.json --out-path bin/",
-    "pkg-server": "cross-env NEXRENDER_REQUIRE_PLUGINS=1 pkg packages/nexrender-server/package.json --out-path bin/",
-    "pkg-prelink": "lerna run --scope @nexrender/core pkg-prelink && lerna run --scope @nexrender/server pkg-prelink",
-    "pkg": "npm run pkg-prelink && npm run pkg-cli && npm run pkg-server && npm run pkg-worker && npm run pkg-rename",
     "test": "npm run lint && mocha"
   },
   "devDependencies": {
@@ -36,5 +28,8 @@
     "mocha": "^7.1.2",
     "pkg": "^5.8.1",
     "testdouble": "^3.20.0"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
