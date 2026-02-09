@@ -12,7 +12,7 @@
     "url": "https://github.com/inlife"
   },
   "scripts": {
-    "start": "npx nexrender-server --port $PORT --secret $NEXRENDER_SECRET",
+    "start": "npx nexrender-server --host 0.0.0.0 --port $PORT --secret $NEXRENDER_SECRET",
     "bootstrap": "lerna bootstrap --no-ci -- --no-package-lock",
     "postinstall": "npm run bootstrap",
     "lint": "eslint .",
